@@ -22,15 +22,15 @@
 - **React Router**: For seamless navigation between pages.  
 - **TailwindCSS**: For building a responsive and visually appealing UI.  
 - **LocalStorage**: For persisting special days data locally.  
-
 ---  
 
 ## 📂 Project Structure  
 
+- **/src/assets**: Stores images and other static resources.  
+- **/src/DailyTasks**: Contains task-specific components (Today, Weekly, Monthly, SpecialDay).
 - **/src/components**: Contains reusable UI components.  
 - **/src/redux**: Includes Redux store and reducers.  
-- **/src/assets**: Stores images and other static resources.  
-- **/src/DailyTasks**: Contains task-specific components (Today, Weekly, Monthly).  
+- **/src/Registration**: Includes components for user registration, such as Sign In, Sign Up and .
 
 ---  
 

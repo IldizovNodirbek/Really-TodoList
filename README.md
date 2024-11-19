@@ -30,7 +30,7 @@
 - **/src/DailyTasks**: Contains task-specific components (Today, Weekly, Monthly, SpecialDay).
 - **/src/components**: Contains reusable UI components.  
 - **/src/redux**: Includes Redux store and reducers.  
-- **/src/Registration**: Includes components for user registration, such as Sign In, Sign Up and OTPCode.
+- **/src/Registration**: Includes components for user registration, such as Sign In, Sign Up and OTPAuth.
 
 ---  
 

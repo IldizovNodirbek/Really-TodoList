@@ -5,9 +5,6 @@ import SignUp from "./Registration/SignUp";
 import HomePage from "./Main/HomePage";
 import TodoPage from "./UserProfile/TodoPage";
 import OtpAuth from "./Registration/OtpAuth";
-import OneDay from "./DailyTasks/OneDay";
-import OneDayMonth from "./DailyTasks/OneDayMonth";
-import OneDaySpecial from "./DailyTasks/OneDaySpecial";
 
 const App = () => {
   return (
@@ -18,9 +15,6 @@ const App = () => {
         <Route path="/signup" element={<SignUp />} />
         <Route path="/todo/*" element={<TodoPage />} />
         <Route path="/otp" element={<OtpAuth />} />
-        <Route path="/todo/weekly/:day" element={<OneDay />} />
-        <Route path="/todos/:day" element={<OneDaySpecial />} />
-        <Route path="/todo/monthly/:day" element={<OneDayMonth />} />
       </Routes>
     </div>
   );

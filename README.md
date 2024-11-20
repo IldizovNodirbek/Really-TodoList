@@ -50,13 +50,13 @@ To run the project locally, follow these steps:
    cd DailyTask
    ```
 
-   2. **Install dependencies**:
+   2.**Install dependencies**:
 
    ```bash
    npm install
    ```
 
-   3. **Run the project**:
+   3.**Run the project**:
 
    ```bash
    npm run dev

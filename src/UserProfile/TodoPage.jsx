@@ -1,11 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {
-  Link,
-  Route,
-  Routes,
-  useLocation,
-  useNavigate,
-} from "react-router-dom";
+import { Link, Route, Routes, useLocation } from "react-router-dom";
 import target from "../assets/target.png";
 import userIcon from "../assets/people.png";
 import TodayTasks from "../DailyTasks/TodayTasks";
@@ -13,11 +7,13 @@ import WeeklyTasks from "../DailyTasks/WeeklyTasks";
 import MonthlyTasks from "../DailyTasks/MonthlyTasks";
 import AddSpecialDay from "../DailyTasks/AddSpecialDay";
 import { useSelector } from "react-redux";
+import OneDay from "../DailyTasks/OneDay";
+import OneDayMonth from "../DailyTasks/OneDayMonth";
+import OneDaySpecial from "../DailyTasks/OneDaySpecial";
 
 function TodoPage() {
-  const [specialDays, setSpecialDays] = useState([]);
+  const [specialDays, setSpeicalDays] = useState([]);
   const location = useLocation();
-  const navigate = useNavigate();
   const name = useSelector((state) => state.user.name);
   const email = useSelector((state) => state.user.email);
 
@@ -28,21 +24,16 @@ function TodoPage() {
     try {
       if (data) {
         const parsedData = JSON.parse(data);
-        setSpecialDays(parsedData);
+
+        setSpeicalDays(parsedData);
       } else {
-        setSpecialDays([]);
+        setSpeicalDays([]);
       }
     } catch (error) {
       console.error('Failed to parse localStorage data for "special":', error);
-      setSpecialDays([]);
+      setSpeicalDays([]);
     }
   }, []);
-
-  useEffect(() => {
-    if (location.pathname === "/todo") {
-      navigate("/todo/today");
-    }
-  }, [location.pathname, navigate]);
 
   const openSpecialDayModal = () => setSpecialDayModalOpen(true);
   const closeSpecialDayModal = () => setSpecialDayModalOpen(false);
@@ -50,7 +41,7 @@ function TodoPage() {
   return (
     <div className="relative mt-10 px-4 sm:px-8">
       <div
-        className={`border border-[#5200FF] p-4 sm:p-8 max-w-full lg:max-w-8xl mx-auto bg-white shadow-lg rounded-lg ${
+        className={`border border-[#5200FF] p-4 sm:p-8 max-w-full lg:max-w-7xl mx-auto bg-white shadow-lg rounded-lg ${
           isSpecialDayModalOpen && "blur-sm"
         }`}
       >
@@ -136,6 +127,9 @@ function TodoPage() {
               <Route path="today" element={<TodayTasks />} />
               <Route path="weekly" element={<WeeklyTasks />} />
               <Route path="monthly" element={<MonthlyTasks />} />
+              <Route path="weekly/:day" element={<OneDay />} />
+              <Route path="/:day" element={<OneDaySpecial />} />
+              <Route path="/monthly/:day" element={<OneDayMonth />} />
             </Routes>
           </div>
         </div>

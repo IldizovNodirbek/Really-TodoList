@@ -60,7 +60,7 @@ function TodayTask() {
 
   return (
     <div className="flex flex-col items-center p-4 bg-gray-100">
-      <div className="bg-[#5200FF] text-white text-2xl font-semibold px-4 sm:px-6 md:px-8 lg:px-16 xl:px-40 py-3 rounded-lg shadow-lg mb-6 text-center">
+      <div className="bg-[#5200FF] text-white text-2xl font-semibold lg:px-80 md:px-40 sm:px-6 py-3 rounded-lg shadow-lg mb-6 text-center">
         {todayDate}
       </div>
 
@@ -129,7 +129,7 @@ function TodayTask() {
                         {status !== "todo" && (
                           <button
                             onClick={() => handleChangeStatus(task.id, "todo")}
-                            className="block text-left px-4 py-2 w-full hover:bg-gray-100 text-blue-500 font-semibold"
+                            className="block text-left px-4 py-2 w-full hover:bg-gray-100 text-orange-700 font-semibold"
                           >
                             todo
                           </button>

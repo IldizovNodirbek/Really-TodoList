@@ -52,6 +52,7 @@ To run the project locally, follow these steps:
 
    ```bash
    git clone https://github.com/IldizovNodirbek/Really-TodoList.git
+   cd dailyTask
    ```
 
 2. **Install dependencies**:
